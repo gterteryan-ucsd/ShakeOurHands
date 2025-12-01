@@ -4,6 +4,7 @@
     </style>
     <head>
         <title>ECE 5 Team 27: Shake Our Hands</title>
+        <link rel="stylesheet" href="style.css">
         <link rel="icon" type="image/x-icon" href="favicon.ico">
     </head>
     <body style="position: relative;">
@@ -11,13 +12,53 @@
             <h1 style="font-family:Comfortaa">Shake Our Hands</h1>    
             <p>Greg Terteryan, Kyle Lieu, Kevin Nguyen, Julio Perez</p>
         </center>
-        <h2>Challenge 1:</h2>
-        <img src="chal1A.png" width="300" height="400">
-        <img src="chal1B.png" width="300" height="400">
-        <img src="chal1C.png" width="400" height="300">
-        <h2>Challenge 2:</h2>
-        <img src="chal2.png" width="800" height="600">
-        <h2>Challenge 3:</h2>
-        <video src="chal3.mp4" width="800" height="600" controls>
+        <button class="collapsible">Challenge 1:</button>
+        <img class="image" src="chal1A.png" width="300" height="400">
+        <img class="image" src="chal1B.png" width="300" height="400">
+        <img class="image" src="chal1C.png" width="400" height="300">
+        <button class="collapsible">Challenge 1:</button>
+        <img class="image" src="chal2.png" width="800" height="600">
+        <button class="collapsible">Challenge 1:</button>
+        <video class="vid" src="chal3.mp4" width="800" height="600" controls>
+
+        <script>
+            var coll = document.getElementsByClassName("collapsible");
+            var collc = document.getElementsByClassName("collapsibleception");
+            var i;
+            var j;
+            
+            for (i = 0; i < coll.length; i++) {
+              coll[i].addEventListener("click", function() {
+                var content = this;
+                var stop = false;
+                do {
+                    content = content.nextElementSibling;
+                    if (content.style.display === "none") {
+                        if (content.className === "collapsibleception") {
+                            content.style.display = "block";
+                            stop = true;
+                        }
+                        else if (!stop) {
+                            content.style.display = "block";
+                        }
+                    }
+                    else if (content.style.display === "block"){
+                        content.style.display = "none";
+                        stop = true;
+                    }
+                } while (content.nextElementSibling.className === "collapsibleception" || content.nextElementSibling.className === "image" || content.nextElementSibling.className === "vid");
+              });
+            }
+            for (j = 0; j < collc.length; j++) {
+              collc[j].addEventListener("click", function() {
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                  content.style.display = "none";
+                } else {
+                  content.style.display = "block";
+                }
+              });
+            }
+        </script>
     </body>
 </html>
