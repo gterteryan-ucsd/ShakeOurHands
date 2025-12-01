@@ -1,0 +1,15 @@
+.collapsible {
+    font-family:Times New Roman;
+    font-size:30px;
+    width: 100%;
+    border: 1px solid black;
+    background-color: #DDD;
+}
+.collapsibleception {
+    font-family:Times New Roman;
+    font-size:25px;
+    width: 100%;
+    border: 1px solid gray;
+    background-color: #EEE;
+    display:none;
+}
