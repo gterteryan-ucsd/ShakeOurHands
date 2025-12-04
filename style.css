@@ -13,7 +13,9 @@
     background-color: #EEE;
     display: none;
 }
-.content {
-    position: relative;
+.image {
     display: none;
+}
+.vid {
+    display: none:
 }
