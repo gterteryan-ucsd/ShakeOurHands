@@ -85,7 +85,6 @@
             for (j = 0; j < collc.length; j++) {
               collc[j].addEventListener("click", function() {
                 var content = this;
-                var stop = false;
                 do {
                     content = content.nextElementSibling;
                     if (content.style.display === "none") {
@@ -93,7 +92,6 @@
                     }
                     else if (content.style.display === "block"){
                         content.style.display = "none";
-                        stop = true;
                     }
                 } while (ccontent.nextElementSibling.className === "image" || content.nextElementSibling.className === "vid" || content.nextElementSibling.className === "yapping");
               });
