@@ -88,6 +88,7 @@
                 var stop = false;
                 do {
                     content = content.nextElementSibling;
+                    if (content.style.display === "none") {
                         content.style.display = "block";
                     }
                     else if (content.style.display === "block"){
