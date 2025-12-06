@@ -84,12 +84,17 @@
             }
             for (j = 0; j < collc.length; j++) {
               collc[j].addEventListener("click", function() {
-                var content = this.nextElementSibling;
-                if (content.style.display === "block") {
-                  content.style.display = "none";
-                } else {
-                  content.style.display = "block";
-                }
+                var content = this;
+                var stop = false;
+                do {
+                    content = content.nextElementSibling;
+                        content.style.display = "block";
+                    }
+                    else if (content.style.display === "block"){
+                        content.style.display = "none";
+                        stop = true;
+                    }
+                } while (ccontent.nextElementSibling.className === "image" || content.nextElementSibling.className === "vid" || content.nextElementSibling.className === "yapping");
               });
             }
         </script>
